@@ -1,0 +1,31 @@
+echo "-------------------------------"
+echo "Actualizar Programas"
+echo "-------------------------------"
+
+sudo apt update && sudo apt upgrade -y
+sudo apt autoremove -y
+
+echo "-------------------------------"
+echo "Programas actualizados"
+echo "-------------------------------"
+
+echo "-------------------------------"
+echo "Actualizar programas del store"
+echo "-------------------------------"
+
+snap-store --quit
+sudo snap refresh
+
+echo "-------------------------------"
+echo "Programas actualizados"
+echo "-------------------------------"
+
+echo "-------------------------------"
+echo "Remover Snaps viejos"
+echo "-------------------------------"
+
+sudo bash RemoveOldSnaps.sh
+
+echo "-------------------------------"
+echo "Snaps Borrados"
+echo "-------------------------------"
