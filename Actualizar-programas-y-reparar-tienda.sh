@@ -26,8 +26,14 @@ echo "-------------------------------"
 echo "Remover Snaps viejos"
 echo "-------------------------------"
 
-sudo bash RemoveOldSnaps.sh
+set -eu
+
+LANG=C snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        snap remove "$snapname" --revision="$revision"
+    done
 
 echo "-------------------------------"
 echo "Snaps Borrados"
 echo "-------------------------------"
+
