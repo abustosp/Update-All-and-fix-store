@@ -15,8 +15,8 @@ echo "-------------------------------"
 echo "Actualizar programas del store"
 echo "-------------------------------"
 
-snap-store --quit
-sudo snap refresh
+# snap-store --quit
+# sudo snap refresh
 
 echo "-------------------------------"
 echo "Programas actualizados"
